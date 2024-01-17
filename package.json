@@ -1,0 +1,12 @@
+{
+  "name": "media-monkey-challange",
+  "version": "1.0.0",
+  "description": "desafio para empresa media monkeys",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": []
+}
