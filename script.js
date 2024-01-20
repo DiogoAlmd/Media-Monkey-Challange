@@ -37,14 +37,7 @@ function corrigirNomes(dados) {
 // Função para corrigir vendas
 function corrigirVendas(dados) {
     dados.forEach((item) => {
-        // Verificar se item.id_marca_ está definido antes de corrigir vendas
-        if (item.id_marca_) {
-            // Convertendo vendas para número, tratando strings
-            item.vendas = parseInt(item.vendas) || 0;
-        } else {
-            // Se não tiver id_marca_, remover a propriedade "vendas"
-            delete item.vendas;
-        }
+        item.vendas = parseInt(item.vendas);
     });
 }
 
@@ -59,7 +52,7 @@ function exportarJson(dados, caminhoDestino) {
     }
 }
 
-// Exemplo de uso:
+// Lógica de uso:
 // Caminhos dos arquivos de entrada e saída
 const caminhoArquivo1 = 'data/broken_database_1.json';
 const caminhoArquivo2 = 'data/broken_database_2.json';
@@ -68,19 +61,14 @@ const caminhoArquivo2 = 'data/broken_database_2.json';
 const caminhoDestinoVendas = 'data/vendasCorrigidas.json';
 const caminhoDestinoMarcas = 'data/marcasCorrigidas.json';
 
-// Ler o arquivo JSON das marcas
-const conteudoArquivoMarcas = fs.readFileSync(caminhoArquivo2, 'utf-8');
-const marcas = JSON.parse(conteudoArquivoMarcas);
-
 // Leitura dos arquivos JSON
 const { dadosJson1, dadosJson2 } = lerArquivosJson(caminhoArquivo1, caminhoArquivo2);
 
 if (dadosJson1 && dadosJson2) {
-    corrigirNomes(dadosJson1, marcas);
-    corrigirNomes(dadosJson2, marcas);
+    corrigirNomes(dadosJson1);
+    corrigirNomes(dadosJson2);
 
     corrigirVendas(dadosJson1);
-    corrigirVendas(dadosJson2);
 
     // Exportar dados corrigidos como JSON
     exportarJson(dadosJson1, caminhoDestinoVendas);
