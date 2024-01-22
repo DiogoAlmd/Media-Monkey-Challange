@@ -15,7 +15,7 @@ Processo seletivo - Tech
 
 Você é responsável por um software de gestão de uma concessionária multimarcas, sua gestão solicitou um relatório de desempenho das vendas dos veículos no último ano.
 
-Ao verificar o banco de dados você percebeu que algumas tabelas foram corrompidas em uma atualização. Todos os nomes de veículos e marcas tiveram alguns caracteres modificados, houve substituição de todos os "a" por "æ", "o" por "ø",.
+Ao verificar o banco de dados você percebeu que algumas tabelas foram corrompidas em uma atualização. Todos os nomes de veículos e marcas tiveram alguns caracteres modificados, houve substituição de todos os "a" por "æ", "o" por "ø".
 
 É preciso reverter essas substituições para recuperar os nomes originais antes de construir o relatório.
 
